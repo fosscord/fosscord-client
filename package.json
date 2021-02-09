@@ -14,7 +14,9 @@
 	"dependencies": {
 		"react": "16.13.1",
 		"react-native": "0.63.4",
-		"react-native-macos": "^0.63.10"
+		"react-native-macos": "^0.63.10",
+		"react-native-windows": "^0.63.0-0",
+		"react-native-windows-init": "^1.1.47"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.4",
@@ -40,5 +42,18 @@
 			"json",
 			"node"
 		]
-	}
+	},
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/discord-open-source/discord-react-native.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/discord-open-source/discord-react-native/issues"
+	},
+	"homepage": "https://github.com/discord-open-source/discord-react-native#readme",
+	"description": ""
 }
