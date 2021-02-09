@@ -1,2 +1,2 @@
-# discord-react-native
-All discord-css components for React-Native
+# fosscord-react-native
+All fosscord-css components for React-Native
