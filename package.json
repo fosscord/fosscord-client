@@ -1,6 +1,6 @@
 {
 	"name": "fosscord",
-	"main": "index.js",
+	"main": "src/index.tsx",
 	"scripts": {
 		"start": "expo start",
 		"android": "expo start --android",
@@ -8,6 +8,7 @@
 		"web": "expo start --web",
 		"mac": "react-native run-macos",
 		"windows": "react-native run-windows",
+		"build-ios": "react-native bundle --platform ios --entry-file src/index.tsx --bundle-output ./main.jsbundle",
 		"eject": "expo eject"
 	},
 	"dependencies": {
@@ -18,7 +19,9 @@
 		"react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
 		"react-native-macos": "^0.63.14",
 		"react-native-web": "~0.13.12",
-		"react-native-windows": "^0.63.0-0"
+		"react-native-windows": "^0.63.0-0",
+		"react-redux": "^7.2.2",
+		"redux": "^4.0.5"
 	},
 	"devDependencies": {
 		"@babel/core": "~7.9.0",
