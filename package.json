@@ -8,7 +8,6 @@
 		"web": "expo start --web",
 		"mac": "react-native run-macos",
 		"windows": "react-native run-windows",
-		"build-ios": "react-native bundle --platform ios --entry-file src/index.tsx --bundle-output ./main.jsbundle",
 		"eject": "expo eject"
 	},
 	"dependencies": {
@@ -16,7 +15,8 @@
 		"expo-status-bar": "~1.0.3",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
-		"react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+		"react-native": "^0.63.4",
+		"react-native-bundle-splitter": "^1.0.9",
 		"react-native-macos": "^0.63.14",
 		"react-native-web": "~0.13.12",
 		"react-native-windows": "^0.63.0-0",

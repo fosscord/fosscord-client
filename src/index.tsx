@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Appearance, ToastAndroid, Platform, AppRegistry } from "react-native";
-// import registerRootComponent from "expo/build/launch/registerRootComponent";
+import { StyleSheet, Text, View } from "react-native";
+import { registerRootComponent } from "expo";
 
 export default function App() {
 	return (
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-AppRegistry.registerComponent(App);
+registerRootComponent(App);
