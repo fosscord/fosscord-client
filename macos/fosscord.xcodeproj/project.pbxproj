@@ -492,8 +492,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = fosscord;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fosscord.client";
+				PRODUCT_NAME = client;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -514,8 +514,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = fosscord;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fosscord.client";
+				PRODUCT_NAME = client;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

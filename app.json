@@ -1,7 +1,8 @@
 {
+	"displayName": "Fosscord",
 	"expo": {
-		"name": "test",
-		"slug": "test",
+		"name": "fosscord",
+		"slug": "fosscord",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
@@ -15,13 +16,15 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
-			"supportsTablet": true
+			"supportsTablet": true,
+			"bundleIdentifier": "com.fosscord.client"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#FFFFFF"
-			}
+			},
+			"package": "com.fosscord.client"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"

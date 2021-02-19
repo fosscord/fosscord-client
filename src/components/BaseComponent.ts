@@ -1,10 +1,10 @@
 import { Component, ReactNode, ErrorInfo } from "react";
 
-export abstract class Comp<P, S> extends Component<P, S> {
+export abstract class Comp extends Component {
 	public firstNodes: ReactNode[] = [];
 	public lastNodes: ReactNode[] = [];
 
-	constructor(props: Readonly<P> & Readonly<{ children?: ReactNode }>, context: any) {
+	constructor(props: Readonly<any> & Readonly<{ children?: ReactNode }>, context: any) {
 		super(props, context);
 	}
 
@@ -17,6 +17,7 @@ export abstract class Comp<P, S> extends Component<P, S> {
 	public abstract run(): ReactNode;
 
 	public render() {
+		console.log(this);
 		const result = this.run() || [];
 		const resultArray = Array.isArray(result) ? result : [result];
 
