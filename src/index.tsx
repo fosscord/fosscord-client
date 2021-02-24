@@ -7,21 +7,35 @@ import "expo-asset";
 import store from "./util/store";
 import { Text, View } from "react-native";
 import { center } from "./styles/";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
 	return (
 		<Provider store={store}>
 			<NativeRouter>
-				<Suspense
-					fallback={
-						<View style={center.center}>
-							<Text>Loading...</Text>
-						</View>
-					}
-				>
-					<Route exact path="/" component={lazy(() => import("./screens/HomeScreen"))} />
-					<Route exact path="/notifications" component={lazy(() => import("./screens/NotificationScreen"))} />
-				</Suspense>
+				<SafeAreaView>
+					<Suspense
+						fallback={
+							<View style={center.center}>
+								<Text>Loading...</Text>
+							</View>
+						}>
+						<Route
+							exact
+							path="/"
+							component={lazy(
+								() => import("./screens/HomeScreen")
+							)}
+						/>
+						<Route
+							exact
+							path="/login"
+							component={lazy(
+								() => import("./screens/LoginScreen")
+							)}
+						/>
+					</Suspense>
+				</SafeAreaView>
 			</NativeRouter>
 		</Provider>
 	);
