@@ -27,7 +27,12 @@
 			"package": "com.fosscord.client"
 		},
 		"web": {
-			"favicon": "./assets/favicon.png"
+			"favicon": "./assets/favicon.png",
+			"build": {
+				"babel": {
+					"include": ["react-router-native"]
+				}
+			}
 		}
 	}
 }

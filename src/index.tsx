@@ -1,48 +1,30 @@
 import "react-native-gesture-handler";
-import * as React from "react";
-import { Button, Text, View } from "react-native";
+import React, { Suspense, lazy } from "react";
 import { Provider } from "react-redux";
+import { NativeRouter, Route } from "react-router-native";
 import { registerRootComponent } from "expo";
-import { NavigationContainer } from "@react-navigation/native";
-// import { createStackNavigator } from "@react-navigation/stack";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 import "expo-asset";
 import store from "./util/store";
-
-// const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-
-// @ts-ignore
-function HomeScreen({ navigation }) {
-	return (
-		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-			<Button onPress={() => navigation.navigate("Notifications")} title="Go to notifications" />
-		</View>
-	);
-}
-
-// @ts-ignore
-function NotificationsScreen({ navigation }) {
-	return (
-		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-			<Button onPress={() => navigation.navigate("Home")} title="Go back home" />
-		</View>
-	);
-}
+import { Text, View } from "react-native";
+import { center } from "./styles/";
 
 export default function App() {
 	return (
 		<Provider store={store}>
-			<NavigationContainer linking={{ enabled: true, prefixes: [] }}>
-				<Drawer.Navigator initialRouteName="Home">
-					<Drawer.Screen name="Home" component={HomeScreen} />
-					<Drawer.Screen name="Notifications" component={NotificationsScreen} />
-				</Drawer.Navigator>
-			</NavigationContainer>
+			<NativeRouter>
+				<Suspense
+					fallback={
+						<View style={center.center}>
+							<Text>Loading...</Text>
+						</View>
+					}
+				>
+					<Route exact path="/" component={lazy(() => import("./screens/HomeScreen"))} />
+					<Route exact path="/notifications" component={lazy(() => import("./screens/NotificationScreen"))} />
+				</Suspense>
+			</NativeRouter>
 		</Provider>
 	);
 }
-
-// AppRegistry.registerComponent("fosscord", () => App);
 
 registerRootComponent(App);
