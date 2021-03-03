@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import { Link } from "react-router-native";
+import { FButton } from "../components";
 
 export default function HomeScreen() {
 	return (
@@ -9,6 +10,9 @@ export default function HomeScreen() {
 			<Link to={`/Login`}>
 				<Text>/Login</Text>
 			</Link>
+			<FButton primary title="test">
+				test
+			</FButton>
 		</View>
 	);
 }

@@ -1,23 +1,32 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { Platform, Text, View } from "react-native";
 import { Link } from "react-router-native";
+import { FTextInput } from "../components/FTextInput";
 
 export default function LoginScreen() {
+	const formContent = [
+		<FTextInput
+			key={"inputEmail"}
+			autoFocus={true}
+			autoCorrect={false}
+			textContentType="emailAddress"
+			clearButtonMode="always"
+			autoCompleteType="email"></FTextInput>,
+		<FTextInput
+			key={"inputPassword"}
+			autoCorrect={false}
+			secureTextEntry={true}
+			clearButtonMode="always"
+			textContentType="password"
+			autoCompleteType="password"></FTextInput>,
+	];
+
 	return (
 		<View>
-			<Link to={`/Home`}>
-				<Text>/Home</Text>
+			<Link to={`/`}>
+				<Text>/</Text>
 			</Link>
-			<TextInput
-				autoFocus={true}
-				autoCorrect={false}
-				clearButtonMode={"always"}
-				autoCompleteType="email"></TextInput>
-			<TextInput
-				autoCorrect={false}
-				clearButtonMode={"always"}
-				autoCompleteType="password"></TextInput>
+			{Platform.OS === "web" ? <form>{formContent}</form> : formContent}
 		</View>
 	);
 }

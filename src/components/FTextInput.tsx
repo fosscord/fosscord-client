@@ -2,7 +2,7 @@ import React from "react";
 import { TextInput, TextInputProps } from "react-native";
 
 export type FTextInputProps = TextInputProps & {
-	test: boolean;
+	test?: boolean;
 };
 
 export function FTextInput(props: FTextInputProps) {
